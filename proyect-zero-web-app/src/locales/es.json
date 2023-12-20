@@ -1,5 +1,13 @@
 {
     "login":{
-        "welcome": "Bienvenido"
+        "welcome": "Bienvenido",
+        "insert": "Acceder",
+        "title":{
+            "header": "Puto"
+        }
+    },
+    "input": {
+        "username": "Usuario",
+        "password": "Contraseña"
     }
 }

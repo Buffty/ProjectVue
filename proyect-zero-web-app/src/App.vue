@@ -1,11 +1,36 @@
 <template>
   <main>
-    <LoginView></LoginView>
-    <!-- <HomeView></HomeView> -->
+    <LoginView v-if="dIsLogged"></LoginView>
+    <HomeView v-else></HomeView>
   </main>
 </template>
 
-<script setup>
-//import HomeView from './views/HomeView.vue';
+<script>
+import HomeView from './views/home/HomeView.vue';
 import LoginView from './views/login/LoginView.vue';
+
+export default {
+  data() {
+    return {
+      dUserInfo: {},
+      dIsLogged: false
+    }
+  },
+  components: {
+    LoginView,
+    HomeView
+  },
+  methods: {
+    fGetInfoUser() {
+      let userInfo = this.$store.getters.getInfoUser
+      if(!userInfo.userName && !userInfo.password){
+        this.dIsLogged = true
+      }
+    }
+  },
+  mounted () {
+    this.fGetInfoUser()
+    
+  }
+};
 </script>
