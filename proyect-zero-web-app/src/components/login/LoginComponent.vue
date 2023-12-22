@@ -1,13 +1,15 @@
 <template>
     <div class="grid grid-nogutter">
         <div class="col-4">
-            <Image src="../../assets/img/login-img.jpg" alt="Image" width="250" />
+            <div class="card flex justify-content-center">
+                <Image src="/img/loginImg.jpg" alt="Image" width="250" />
+            </div>
         </div>
 
         <div class="col-8">
             <Card>
                 <template #title>
-                    <Image src="../../assets/img/logo_sin_fondo.png" alt="Image" width="250" />
+                    <Image src="/img/logo_sin_fondo.png" alt="Image" width="250" />
                     {{ $t('login.welcome') }}
                 </template>
                 <template #content>
@@ -29,6 +31,7 @@ import Card from 'primevue/card'
 import Image from 'primevue/image';
 import Button from 'primevue/button'
 import InputText from 'primevue/InputText'
+
 
 import loginService from '../../services/login'
 
